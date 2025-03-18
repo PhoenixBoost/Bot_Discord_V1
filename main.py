@@ -68,7 +68,7 @@ async def on_member_join(member):
         await channel.send(embed=embed)
 
 # ✅ ประกาศอัตโนมัติทุกๆ 1 ชั่วโมง
-@tasks.loop(hours=1)
+@tasks.loop(hours=24)
 async def auto_announcement():
     channel = bot.get_channel(ANNOUNCEMENT_CHANNEL_ID)
     announcement_data = load_announcement()
